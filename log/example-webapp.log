@@ -1,0 +1,23 @@
+2018-02-06 22:48:00,226 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2018-02-06 22:48:00,764 [main] INFO  example-webapp.env - 
+-=[example-webapp started successfully using the development profile]=- 
+2018-02-06 22:48:01,115 [main] INFO  luminus.http-server - starting HTTP server on port 3000 
+2018-02-06 22:48:01,146 [main] DEBUG io.undertow - starting undertow server io.undertow.Undertow@7cc7a0ca 
+2018-02-06 22:48:01,155 [main] INFO  org.xnio - XNIO version 3.3.6.Final 
+2018-02-06 22:48:01,232 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2018-02-06 22:48:01,285 [main] INFO  org.projectodd.wunderboss.web.Web - Registered web context / 
+2018-02-06 22:48:01,288 [main] INFO  luminus.repl-server - starting nREPL server on port 7000 
+2018-02-06 22:48:01,321 [main] INFO  example-webapp.core - #'example-webapp.config/env started 
+2018-02-06 22:48:01,322 [main] INFO  example-webapp.core - #'example-webapp.handler/init-app started 
+2018-02-06 22:48:01,322 [main] INFO  example-webapp.core - #'example-webapp.handler/app started 
+2018-02-06 22:48:01,322 [main] INFO  example-webapp.core - #'example-webapp.core/http-server started 
+2018-02-06 22:48:01,322 [main] INFO  example-webapp.core - #'example-webapp.core/repl-server started 
+2018-02-06 22:49:26,573 [Thread-2] INFO  luminus.repl-server - nREPL server stopped 
+2018-02-06 22:49:26,574 [Thread-2] DEBUG org.projectodd.wunderboss.WunderBoss - Returning existing component for org.projectodd.wunderboss.web.Web:1801137149, ignoring options. 
+2018-02-06 22:49:26,576 [Thread-2] DEBUG io.undertow - stopping undertow server io.undertow.Undertow@7cc7a0ca 
+2018-02-06 22:49:26,584 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2018-02-06 22:49:26,585 [Thread-2] INFO  example-webapp.env - 
+-=[example-webapp has shut down successfully]=- 
+2018-02-06 22:49:26,586 [Thread-2] INFO  example-webapp.core - #'example-webapp.core/repl-server stopped 
+2018-02-06 22:49:26,586 [Thread-2] INFO  example-webapp.core - #'example-webapp.core/http-server stopped 
+2018-02-06 22:49:26,586 [Thread-2] INFO  example-webapp.core - #'example-webapp.handler/init-app stopped 
