@@ -61,24 +61,23 @@ pipeline {
             }
         }
 
-        // add in chapter3-1
-        // remove in chapter3-2
-        // stage('Deploy to Production fixed server') {
-        //     when {
-        //         branch 'release'
-        //     }
-        //     steps {
-        //         echo 'Deploying release to production'
-        //         script {
-        //             productionImage.push("deploy")
-        //             sh """
-        //                aws ec2 reboot-instances --region us-east-1 --instance-ids i-0e438e2bf64427c9d
-        //             """
-        //         }
-        //     }
-        // }
+ 
+        stage('Deploy to Production fixed server') {
+            when {
+                branch 'release'
+            }
+            steps {
+                echo 'Deploying release to production'
+                script {
+                    productionImage.push("deploy")
+                    sh """
+                       aws ec2 reboot-instances --region us-east-1 --instance-ids i-0e438e2bf64427c9d
+                    """
+                }
+            }
+        }
 
-        // add in chapter4
+
         // stage('Integration Tests') {
         //     when {
         //         branch 'master'
@@ -107,19 +106,19 @@ pipeline {
         //     }
         // }
 
-        // add in chapter3-2
-        // stage('Deploy to Production') {
-        //     when {
-        //         branch 'master'
-        //     }
-        //     steps {
-        //         script {
-        //             PRODUCTION_ALB_LISTENER_ARN="arn:aws:elasticloadbalancing:us-east-1:089778365617:listener/app/production-website/a0459c11ab5707ca/5d21528a13519da6"
-        //             sh """
-        //             ./run-stack.sh example-webapp-production ${PRODUCTION_ALB_LISTENER_ARN}
-        //             """
-        //         }
-        //     }
-        //}
+ 
+        stage('Deploy to Production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    PRODUCTION_ALB_LISTENER_ARN="arn:aws:elasticloadbalancing:us-east-1:089778365617:listener/app/production-website/a0459c11ab5707ca/5d21528a13519da6"
+                    sh """
+                    ./run-stack.sh example-webapp-production ${PRODUCTION_ALB_LISTENER_ARN}
+                    """
+                }
+            }
+        }
     }
 }
