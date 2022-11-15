@@ -11,7 +11,7 @@ pipeline {
                 echo 'Logging Into the Private ECR Registry'
                 script {
                     GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
-                    ACCOUNT_REGISTRY_PREFIX = "089778365617.dkr.ecr.us-east-1.amazonaws.com"
+                    ACCOUNT_REGISTRY_PREFIX = "641061278611.dkr.ecr.us-east-1.amazonaws.com"
                     sh """
                     \$(aws ecr get-login --no-include-email --region us-east-1)
                     """
@@ -85,7 +85,7 @@ pipeline {
             steps {
                 echo 'Deploy to test environment and run integration tests'
                 script {
-                    TEST_ALB_LISTENER_ARN="arn:aws:elasticloadbalancing:us-east-1:089778365617:listener/app/testing-website/3a4d20158ad2c734/49cb56d533c1772b"
+                    TEST_ALB_LISTENER_ARN="arn:aws:elasticloadbalancing:us-east-1:641061278611:listener/app/testing-website/3a4d20158ad2c734/49cb56d533c1772b"
                     sh """
                     ./run-stack.sh example-webapp-test ${TEST_ALB_LISTENER_ARN}
                     """
@@ -113,7 +113,7 @@ pipeline {
             }
             steps {
                 script {
-                    PRODUCTION_ALB_LISTENER_ARN="arn:aws:elasticloadbalancing:us-east-1:089778365617:listener/app/production-website/a0459c11ab5707ca/5d21528a13519da6"
+                    PRODUCTION_ALB_LISTENER_ARN="arn:aws:elasticloadbalancing:us-east-1:641061278611:listener/app/production-website/a0459c11ab5707ca/5d21528a13519da6"
                     sh """
                     ./run-stack.sh example-webapp-production ${PRODUCTION_ALB_LISTENER_ARN}
                     """

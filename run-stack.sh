@@ -18,7 +18,7 @@ aws cloudformation deploy \
     --template-file service.yaml \
     --capabilities CAPABILITY_NAMED_IAM \
     --parameter-overrides \
-    "DockerImage=089778365617.dkr.ecr.us-east-1.amazonaws.com/example-webapp:$(git rev-parse HEAD)" \
+    "DockerImage=641061278611.dkr.ecr.us-east-1.amazonaws.com/example-webapp:$(git rev-parse HEAD)" \
     "VPC=vpc-affe74c9" \
     "Subnet=subnet-23e0d06a" \
     "Cluster=default" \
